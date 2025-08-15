@@ -18,11 +18,6 @@ export const navBarContent = [
         id: 4,
         title: "Contact",
         path: "/contact"
-    },
-    {
-        id: 5,
-        title: "Apply Now",
-        path: "/contact"
     }
 ]
 
@@ -59,13 +54,13 @@ export const heroImages = [
         width: "413px",
         height: "515px",
     },
-    {
-        id: 3,
-        src: "/src/assets/hero/vector.png",
-        description: "Illustraction",
-        inset: "50em auto auto auto",
-        layer: 1,
-        width: "413px",
-        height: "515px",
-    },
+    // {
+    //     id: 3,
+    //     src: "/src/assets/hero/vector.png",
+    //     description: "Illustraction",
+    //     inset: "50em auto auto auto",
+    //     layer: 1,
+    //     width: "413px",
+    //     height: "515px",
+    // },
 ]

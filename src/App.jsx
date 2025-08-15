@@ -5,29 +5,14 @@ import splash from './assets/unsplash-splash.jpg'
 import ladyImg from './assets/unsplash-officelady.jpg'
 
 import { navBarContent, heroImages } from './data/content'
+import Navbar from './components/Navbar'
+import { LinkEmphasized, SearchButton } from './components/UIComponents'
 
 const App = () => {
   return (
     <>
      {/* Header */}
-      <header className="">
-        <div className="navbar">
-          <span>
-            <img src={reactLogo} alt="" />
-            <a href="">JobHive</a>
-          </span>
-
-          <input type="text" placeholder="Search for Jobs, Companies or keywords..." />
-
-          <nav className="navbar__links">
-            <a href="">{navBarContent[0].title}</a>
-            <a href="">{navBarContent[1].title}</a>
-            <a href="">{navBarContent[2].title}</a>
-            <a href="">{navBarContent[3].title}</a>
-            <a href="">{navBarContent[4].title}</a>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       <section id="hero">
       {/* <section id="hero" style={{ backgroundColor: 'black'}}> */}
@@ -46,12 +31,18 @@ const App = () => {
             </div>
           ))}
         </div>
-        
-        
-        {/* <div className="hero__caption">
-          <span>Find a Job that suits <br /> your interests and skills</span>
-        </div> */}
-        {/* <div style={{ width: '801px', height: '796px', flexShrink: 0 }} className="image" ></div> */}
+        <div className="hero__caption">
+          <span className="caption">Connecting talent
+            <br />with opportunity.
+          </span>
+          <p>Explore a curated list of jobs from top employers, all in one place.</p>
+          <div style={{display: 'flex',}}>
+          <SearchButton />
+          {/* btn-cta not used */}
+          <LinkEmphasized className="btn-cta" style={{fontSize: '1.5rem'}} href="" color="black" title="Explore Jobs" />
+          </div>
+
+        </div>
       </section>
     </>
   )

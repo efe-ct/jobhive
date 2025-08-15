@@ -1,31 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-body {
-  font-family: 'Inter';
-}
-
-/* Background Colors */
-
-header {
-  background-color: var(--white);
-}
-
-#hero {
-  background-color: #fe7f2d;
-}
-
-/* Background Colors */
-
-/* gradients */
-/* CSS HEX */
 :root {
   /* --charcoal: hsla(210, 25%, 22%, 1);
   --bistre: hsla(33, 23%, 15%, 1);
@@ -52,10 +27,15 @@ header {
   --black: #000000ff;
 
   --bg-color: var(--white);
-  --primary-color: var(--black);
+  --bg-emphasis-color: var(--black);
+  --text-color: var(--black);
+  --text-emphasis-color: var(--white);
+
+
   --secondary-color: var(--raisin-black);
   --accent-1: var(--viridian);
   --accent-2: var(--wisteria);
+  --accent-3: var(--raisin-black);
 
   --f-text-color: var(--black);
   --f-text-secondary-color: rgba(0, 0, 0, 0.65);
@@ -70,58 +50,36 @@ header {
   --f-badge-bg-color: rgba(0, 0, 0, 0.08);
   --f-emphasis-btn-bg-color: #000000;
   --f-emphasis-btn-text-color: #FFFFFF;
-}
 
 
-/* gradients */
-
-:root {
+  /* used */
   --margin: 5rem;
-  --nav-gap: 16px;
+  --nav-gap: 1.5rem;
 }
 
-header {
-  position: relative;
-  z-index: 1;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* applying both flex and centering to .navbar class and span child */
-.navbar,
-.navbar span {
-  display: flex;
-  align-items: center;
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
-
-  a:hover {
-    color: blue;
-  }
-
+body {
+  font-family: 'Inter';
 }
 
-.navbar {
-  padding: 16px;
-  margin: 0 var(--margin);
-  justify-content: space-between;
+/* Background Colors */
+#hero {
+  background-color: var(--bg-color);
 }
 
-.navbar span {
-  gap: var(--nav-gap);
-}
+/* Background Colors */
 
-.navbar input {
-  width: 360px;
-  padding: 0.4rem;
-}
 
-/*for the input styling in the navbar*/
-
-.navbar .navbar__links {
-  display: flex;
-  gap: var(--nav-gap);
+.pointer {
+  cursor: pointer
 }
 
 /* Hero Section */
@@ -129,6 +87,7 @@ header {
   position: relative;
   padding: 0 var(--margin);
   height: 90vh;
+  overflow: hidden;
   /* overflow: hidden; hides the image remains */
 
   color: black;
@@ -140,8 +99,9 @@ header {
   display: block;
   position: relative;
   transform-origin: top left;
-  transform: scale(0.5);
-  left: 60vw;
+  transform: scale(0.7);
+  left: clamp(1%, 50vw, 90%);
+  /* left: calc(clamp(0%, 50vw, 60vw) - (50% * 0.2)); */
 }
 
 .image {
@@ -149,32 +109,27 @@ header {
   display: inline-block;
 }
 
-/* original image */
-/* .image {
-  position: absolute;
-  display: inline-block;
-  transform: scale(0.5);
-  transform-origin: top left;
-  inset: 0 0 0 70vw;
-} */
 
-
-/* .image {
-  background: url(./assets/unsplash-splash.jpg) lightgray 0px -111px / 104.295% 128.564% no-repeat;
-  position: absolute;
-  bottom: 0rem;
-  left: 44dvw;
-  z-index: 0; 
-} */
-/*layer of the image*/
 
 .hero__caption {
   z-index: 1;
   position: relative;
   top: 10rem;
-  font-size: 5rem;
-  font-weight: 700;
 }
+
+.hero__caption .caption {
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 5rem;
+}
+
+.hero__caption p {
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 300;
+}
+
 
 
 /* Hero Section */

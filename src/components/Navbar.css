@@ -1,0 +1,38 @@
+header {
+  background-color: var(--white);
+}
+
+header {
+  position: relative;
+  z-index: 1;
+  height: 5rem;
+}
+
+/* applying both flex and centering to .navbar class and span child */
+.navbar,
+.navbar span,
+.navbar__links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  padding: 16px;
+  margin: 0 var(--margin);
+  justify-content: space-between;
+}
+
+.navbar span {
+  gap: var(--nav-gap);
+}
+
+.navbar input {
+  width: 360px;
+  padding: 0.4rem;
+}
+
+/*for the input styling in the navbar*/
+
+.navbar .navbar__links {
+  gap: var(--nav-gap);
+}
