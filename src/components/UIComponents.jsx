@@ -1,4 +1,11 @@
 import './UIComponents.css'
+import logo from '/logo.svg'
+
+export const Logo = () => {
+    return(
+        <img className="logo" src={logo} alt="" />
+    )
+}
 
 export const Link = ({ href, title }) => {
     return (
