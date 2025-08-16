@@ -2,22 +2,22 @@ export const navBarContent = [
     {
         id: 1,
         title: "Home",
-        path: "/"
+        path: "home"
     },
     {
         id: 2,
         title: "About",
-        path: "/about"
+        path: "about"
     },
     {
         id: 3,
         title: "Services",
-        path: "/services"
+        path: "services"
     },
     {
         id: 4,
         title: "Contact",
-        path: "/contact"
+        path: "contact"
     }
 ]
 

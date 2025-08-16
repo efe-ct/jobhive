@@ -6,7 +6,7 @@ import { Link, LinkEmphasized, SearchButton, Logo } from './UIComponents'
 
 
 
-const Navbar = () => {
+const Navbar = ({ onNavigate }) => {
     return (
         <header className="">
             <div className="navbar" style={{fontSize: "1.2rem"}}>
@@ -18,7 +18,7 @@ const Navbar = () => {
                 {/* <SearchButton /> */}
                 <nav className="navbar__links" >
                     {navBarContent.map((link) => (
-                        <Link href="" title={link.title} />
+                        <Link onNavigate={onNavigate} href={link.path} key={link.id} title={link.title} />
                     ))}
                     <LinkEmphasized color="black" href="" title="Apply Now" />
                     <LinkEmphasized color="white" href="" title="Contact Us" />

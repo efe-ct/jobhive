@@ -1,18 +1,35 @@
-import React from 'react'
-
-import reactLogo from './assets/react.svg'
-import splash from './assets/unsplash-splash.jpg'
-import ladyImg from './assets/unsplash-officelady.jpg'
-
-import { navBarContent, heroImages } from './data/content'
+import {  heroImages } from './data/content'
 import Navbar from './components/Navbar'
 import { LinkEmphasized, SearchButton } from './components/UIComponents'
+import { useState } from 'react'
 
 const App = () => {
+
+  const [query, setQuery] = useState('');
+
+  const handleSearch = (searchTerm) => {
+    setQuery(searchTerm);
+
+    console.log("The user wants to search for " + searchTerm)
+  }
+
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const handleNavigate = (pageName) => {
+    setCurrentPage(pageName);
+    console.log(`Navigating to " + ${pageName}`);
+  }
+
   return (
     <>
      {/* Header */}
-      <Navbar />
+      <Navbar onNavigate={handleNavigate} />
+
+      {currentPage === 'about' && <h2>About Us</h2> }
+      {currentPage === 'services' && <h2>Services</h2> }
+      {currentPage === 'contact' && <h2>Contact Us</h2> }
+
+
 
       <section id="hero">
       {/* <section id="hero" style={{ backgroundColor: 'black'}}> */}
@@ -36,8 +53,8 @@ const App = () => {
             <br />with opportunity.
           </span>
           <p>Explore a curated list of jobs from top employers, all in one place.</p>
-          <div style={{display: 'flex',}}>
-          <SearchButton />
+          <div style={{display: 'flex', alignItems: 'center'}}>
+          <SearchButton onSearch={handleSearch} />
           {/* btn-cta not used */}
           <LinkEmphasized className="btn-cta" style={{fontSize: '1.5rem'}} href="" color="black" title="Explore Jobs" />
           </div>

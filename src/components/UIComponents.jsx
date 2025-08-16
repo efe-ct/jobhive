@@ -7,9 +7,19 @@ export const Logo = () => {
     )
 }
 
-export const Link = ({ href, title }) => {
+export const Link = ({ href, title, onNavigate }) => {
+
+    const handleClick = (e) => {
+        e.preventDefault();
+
+        if(onNavigate) {
+            onNavigate(href);
+        }
+    }
+
     return (
-        <a className="styledLink" href={href}>{title}</a>
+        <span style={{cursor: 'pointer'}} onClick={handleClick} className="styledLink" href={href}>{title}</span>
+        // <a onClick={navigation} className="styledLink" href={href}>{title}</a>
     )
 }
 
@@ -25,8 +35,27 @@ export const LinkEmphasized = ({ href, title , color, style }) => {
     )
 }
 
-export const SearchButton = () => {
+export const SearchButton = ( {onSearch} ) => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+
+        const formData = new FormData(e.currentTarget);
+    
+        const query = formData.get('search');
+        console.log("You searched for: " + query);
+    
+        if (onSearch) {
+            onSearch(query);
+        } 
+    }
+
+
     return (
-        <input className="searchButton" type="text" placeholder="Search for Jobs, Companies or keywords..." />  
+        <form onSubmit={handleSubmit} style={{ width: '30vw', display: 'inline-block'}}>
+            <input className="searchButton" type="text" name='search' placeholder="Search for Jobs, Companies or keywords..." />  
+            {/* <button type='submit'>Submit</button> if there is need for a button */} 
+        </form>
     )
 }
