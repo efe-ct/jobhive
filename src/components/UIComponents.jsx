@@ -8,14 +8,14 @@ export const Logo = () => {
 }
 
 export const Link = ({ href, title, onNavigate }) => {
-
     const handleClick = (e) => {
         e.preventDefault();
-
+    
         if(onNavigate) {
             onNavigate(href);
         }
     }
+    
 
     return (
         <span style={{cursor: 'pointer'}} onClick={handleClick} className="styledLink" href={href}>{title}</span>

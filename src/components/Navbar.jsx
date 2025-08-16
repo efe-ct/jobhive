@@ -6,10 +6,19 @@ import { Link, LinkEmphasized, SearchButton, Logo } from '@/components/UICompone
 
 
 const Navbar = ({ onNavigate }) => {
+    
+        const handleClick = (e) => {
+        e.preventDefault();
+
+        if(onNavigate) {
+            onNavigate(href);
+        }
+    }
+
     return (
         <header className="">
             <div className="navbar" style={{ fontSize: "1.2rem" }}>
-                <span className="pointer">
+                <span onClick={() => onNavigate('home')} className="pointer">
                     <Logo />
                     <span>JobHive</span>
                 </span>
