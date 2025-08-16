@@ -25,11 +25,12 @@ const App = () => {
     <>
      {/* Header */}
       <Navbar onNavigate={handleNavigate} />
-
-      {currentPage === 'home' && <Home handleSearch={handleSearch} /> }
-      {currentPage === 'about' && <h2>About Us</h2> }
-      {currentPage === 'services' && <h2>Services</h2> }
-      {currentPage === 'contact' && <h2>Contact Us</h2> }
+      <div id="body">
+        {currentPage === 'home' && <Home handleSearch={handleSearch} /> }
+        {currentPage === 'about' && <h2>About Us</h2> }
+        {currentPage === 'services' && <h2>Services</h2> }
+        {currentPage === 'contact' && <h2>Contact Us</h2> }
+      </div>
     </>
   )
 }
