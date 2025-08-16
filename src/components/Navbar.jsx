@@ -1,15 +1,14 @@
-import React from 'react'
-import './Navbar.css'
+import '@/components/Navbar.css'
 import reactLogo from '../assets/react.svg'
-import { navBarContent } from '../data/content'
-import { Link, LinkEmphasized, SearchButton, Logo } from './UIComponents'
+import { navBarContent } from '@/data/content'
+import { Link, LinkEmphasized, SearchButton, Logo } from '@/components/UIComponents'
 
 
 
 const Navbar = ({ onNavigate }) => {
     return (
         <header className="">
-            <div className="navbar" style={{fontSize: "1.2rem"}}>
+            <div className="navbar" style={{ fontSize: "1.2rem" }}>
                 <span className="pointer">
                     <Logo />
                     <span>JobHive</span>
