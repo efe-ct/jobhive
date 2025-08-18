@@ -64,3 +64,27 @@ export const heroImages = [
     //     height: "515px",
     // },
 ]
+
+// this json data was generated on https://www.mockaroo.com/
+export const statisticReport = [
+    {
+        id: 0,
+        content: "Companies",
+        stats: 4,
+    },
+    {
+        id: 1,
+        content: "Active Jobs",
+        stats: 6,
+    },
+    {
+        id: 2,
+        content: "Completed Hires",
+        stats: 12,
+    },
+    {
+        id: 3,
+        content: "Job Listings",
+        stats: 24,
+    },
+]

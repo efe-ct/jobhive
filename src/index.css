@@ -20,7 +20,8 @@
 
 
   /* CSS HEX */
-  --viridian: #6b9080ff;
+  --viridian: #f3ffe3;
+  /* --viridian: #6b9080ff; */
   --raisin-black: #272727ff;
   --wisteria: #cb9fd2ff;
   --white: #fcfffdff;
@@ -82,30 +83,33 @@ body {
   cursor: pointer
 }
 
-#body {
+section {
   padding: 0 var(--margin);
 }
 
 /* Hero Section */
 #hero {
-  position: relative;
-  height: 90vh;
-  overflow: hidden;
-  /* overflow: hidden; hides the image remains */
-
   color: black;
+  display: flex;
+  justify-content: space-between;
+  min-height: clamp(500px, 90vh, 800px); 
 }
 
 /* height: 1031px; w=687 */
 
 #heroImage {
-  display: block;
-  position: relative;
+  display: inline-block;
+  /* position: relative; */
   transform-origin: top left;
   transform: scale(0.7);
   /* left: clamp(1%, 50vw, 90%); */
   /* left: calc(clamp(0%, 50vw, 60vw) - (50% * 0.2)); */
 }
+
+#hero::after {
+  border-bottom: 100px solid #000000;
+} /*just giving some page before and after each section*/
+
 
 .image {
   position: absolute;
@@ -136,3 +140,44 @@ body {
 
 
 /* Hero Section */
+
+/* Statistics Section */
+#statistics {
+  background-color: var(--accent-1);
+  color: var(--text-color);
+  padding-top: 5em; 
+
+  h1 {
+    text-align: center;
+  }
+  
+.stats__grid {
+  /* Default style for desktops (primary layout) */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 5em 0;
+  gap: clamp(10px, 1rem, 20px);
+}
+
+.stats__card {
+  border: 1px solid var(--text-color);
+  cursor: pointer;
+  border-radius: 10em;
+  text-align: center;
+  padding: 50px 10px;
+}
+
+.stats__card:hover {
+  background-color: var(--bg-emphasis-color);
+  color: var(--text-emphasis-color);
+}
+}
+/* Media query for tablets and phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .stats__grid {
+    /* Styles to change the layout for smaller screens */
+    grid-template-columns: 1fr;
+  }
+}
+
+  /* Statistics Section */
