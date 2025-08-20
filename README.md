@@ -1,5 +1,6 @@
 # ![JobHive Logo](public/logo.svg)
-!([https://hackatime-badge.hackclub.com/U092BN4QB5W/jobhive](https://hackatime-badge.hackclub.com/U092BN4QB5W/JobHive - Semester 1))
+![HackaTime Badge](https://hackatime-badge.hackclub.com/U092BN4QB5W/JobHive%20-%20Semester%201)
+
 
 ![banner](./src/assets/backdrop.png)
 ![banner_m](./src/assets/mobile_banner.jpg)
