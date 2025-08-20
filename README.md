@@ -1,4 +1,5 @@
 # ![JobHive Logo](public/logo.svg)
+![HackaTime Badge](https://hackatime-badge.hackclub.com/U092BN4QB5W/jobhive)
 
 ![banner](./src/assets/backdrop.png)
 ![banner_m](./src/assets/mobile_banner.jpg)
