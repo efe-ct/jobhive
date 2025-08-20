@@ -60,8 +60,15 @@
 /* Search Bar */
 
 /* Logo */
+
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+/* .logo img {
     width: 2.5rem;
     height: 2.5rem;
-}
+} */
+
 /* Logo */

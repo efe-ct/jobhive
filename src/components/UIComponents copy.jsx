@@ -2,31 +2,28 @@ import './UIComponents.css'
 import logo from '/logo.svg'
 
 export const Logo = () => {
-    return (
-        <span onClick={() => onNavigate('home')} className="logo">
-            <img src={logo} alt="logo" />
-            <span style={{fontWeight: '600'}}>JobHive</span>
-        </span>
+    return(
+        <img className="logo" src={logo} alt="" />
     )
 }
 
 export const Link = ({ href, title, onNavigate }) => {
     const handleClick = (e) => {
         e.preventDefault();
-
-        if (onNavigate) {
+    
+        if(onNavigate) {
             onNavigate(href);
         }
     }
-
+    
 
     return (
-        // <span style={{cursor: 'pointer'}} onClick={handleClick} className="styledLink" href={href}>{title}</span>
-        <a onClick={handleClick} className="styledLink" href={href}>{title}</a>
+        <span style={{cursor: 'pointer'}} onClick={handleClick} className="styledLink" href={href}>{title}</span>
+        // <a onClick={navigation} className="styledLink" href={href}>{title}</a>
     )
 }
 
-export const LinkEmphasized = ({ href, title, color, style }) => {
+export const LinkEmphasized = ({ href, title , color, style }) => {
     const LinkEmphasizedOptions = `styledLinkEmphasized ${color === 'black' ? 'black' : color === 'white' ? 'white' : ''}`;
     return (
         <a style={style} className={LinkEmphasizedOptions} href={href}>
@@ -38,27 +35,27 @@ export const LinkEmphasized = ({ href, title, color, style }) => {
     )
 }
 
-export const SearchButton = ({ onSearch }) => {
+export const SearchButton = ( {onSearch} ) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
 
         const formData = new FormData(e.currentTarget);
-
+    
         const query = formData.get('search');
         console.log("You searched for: " + query);
-
+    
         if (onSearch) {
             onSearch(query);
-        }
+        } 
     }
 
 
     return (
-        <form onSubmit={handleSubmit} style={{ width: '30vw', display: 'inline-block' }}>
-            <input className="searchButton" type="text" name='search' placeholder="Search for Jobs, Companies or keywords..." />
-            {/* <button type='submit'>Submit</button> if there is need for a button */}
+        <form onSubmit={handleSubmit} style={{ width: '30vw', display: 'inline-block'}}>
+            <input className="searchButton" type="text" name='search' placeholder="Search for Jobs, Companies or keywords..." />  
+            {/* <button type='submit'>Submit</button> if there is need for a button */} 
         </form>
     )
 }
