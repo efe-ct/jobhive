@@ -25,7 +25,7 @@ export const navBarContent = [
 export const heroImages = [
     {
         id: 0,
-        src: "/src/assets/hero/lady.png",
+        src: "/hero/lady.png",
         description: "An Office Lady with Glasses",
         inset: "20em auto auto 7rem",
         layer: 2,
@@ -34,7 +34,7 @@ export const heroImages = [
     },
     {
         id: 1,
-        src: "/src/assets/hero/construct.png",
+        src: "/hero/construct.png",
         description: "An Office Guy",
         inset: "4rem auto auto 30rem",
         layer: 3,
@@ -43,7 +43,7 @@ export const heroImages = [
     },
     {
         id: 2,
-        src: "/src/assets/hero/help.png",
+        src: "/hero/help.png",
         description: "Help Wanted Banner",
         inset: "30rem auto auto 27rem",
         layer: 4,
