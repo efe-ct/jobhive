@@ -10,10 +10,10 @@ const Navbar = ({ onNavigate }) => {
 
     const sidebar = useRef(null);
     function showSidebar() {
-        sidebar.current.style.display = 'flex';
+        sidebar.current.classList.add('open')
     }
     function closeSidebar() {
-        sidebar.current.style.display = 'none';
+        sidebar.current.classList.remove('open')
     }
     
     
