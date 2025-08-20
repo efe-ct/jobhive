@@ -2,31 +2,27 @@ export const navBarContent = [
     {
         id: 1,
         title: "Home",
-        path: "home"
+        path: "/home"
     },
     {
         id: 2,
         title: "About",
-        path: "about"
+        path: "/about"
     },
     {
         id: 3,
-        title: "Services",
-        path: "services"
+        title: "Jobs",
+        path: "/jobs"
     },
     {
         id: 4,
         title: "Contact",
-        path: "contact"
+        path: "/contact"
     }
 ]
 
 
 export const heroImages = [
-    // src: "/src/assets/unsplash-officelady.jpg",
-    // src: "/src/assets/constructionman1.png",
-    // src: "/src/assets/helpwanted.png",
-    // src: "/src/assets/vector.avif",
     {
         id: 0,
         src: "/src/assets/hero/lady.png",
@@ -53,16 +49,7 @@ export const heroImages = [
         layer: 4,
         width: "413px",
         height: "515px",
-    },
-    // {
-    //     id: 3,
-    //     src: "/src/assets/hero/vector.png",
-    //     description: "Illustraction",
-    //     inset: "50em auto auto auto",
-    //     layer: 1,
-    //     width: "413px",
-    //     height: "515px",
-    // },
+    }
 ]
 
 // this json data was generated on https://www.mockaroo.com/

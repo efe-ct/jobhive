@@ -62,6 +62,8 @@
 /* Logo */
 
 .logo {
+    text-decoration: none;
+    color: unset;
     display: flex;
     align-items: center;
     gap: min(1vw, 15px);
