@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
   /* --charcoal: hsla(210, 25%, 22%, 1);
@@ -18,7 +17,6 @@
   --gradient-bottom-left: linear-gradient(315deg, #2B3947ff, #30281Eff, #E0B07Bff, #456990ff, #03120Eff);
   --gradient-radial: radial-gradient(#2B3947ff, #30281Eff, #E0B07Bff, #456990ff, #03120Eff); */
 
-
   /* CSS HEX */
   --viridian: #f3ffe3;
   /* --viridian: #6b9080ff; */
@@ -32,7 +30,6 @@
   --text-color: var(--black);
   --text-emphasis-color: var(--white);
 
-
   --secondary-color: var(--raisin-black);
   --accent-1: var(--viridian);
   --accent-2: var(--wisteria);
@@ -41,23 +38,22 @@
   --f-text-color: var(--black);
   --f-text-secondary-color: rgba(0, 0, 0, 0.65);
   --f-primary-btn-bg-color: #000000;
-  --f-primary-btn-text-color: #FFFFFF;
+  --f-primary-btn-text-color: #ffffff;
   --f-form-input-bg-color: rgba(0, 0, 0, 0.08);
   --f-form-select-hover-bg-color: rgba(0, 0, 0, 0.16);
   --f-form-placeholder-text-color: rgba(0, 0, 0, 0.5);
   --f-form-error-bg-color: #972121;
-  --f-form-error-text-color: #FFFFFF;
+  --f-form-error-text-color: #ffffff;
   --f-badge-text-color: #000000;
   --f-badge-bg-color: rgba(0, 0, 0, 0.08);
   --f-emphasis-btn-bg-color: #000000;
-  --f-emphasis-btn-text-color: #FFFFFF;
-
+  --f-emphasis-btn-text-color: #ffffff;
 
   /* used */
   --margin: 5rem;
+  /* --margin: min(1vw, 30px); */
   --nav-gap: 1.5rem;
 }
-
 
 *,
 *::before,
@@ -78,9 +74,8 @@ body {
 
 /* Background Colors */
 
-
 .pointer {
-  cursor: pointer
+  cursor: pointer;
 }
 
 section {
@@ -92,7 +87,7 @@ section {
   color: black;
   display: flex;
   justify-content: space-between;
-  min-height: clamp(500px, 90vh, 800px); 
+  min-height: clamp(500px, 90vh, 800px);
 }
 
 /* height: 1031px; w=687 */
@@ -110,13 +105,10 @@ section {
   border-bottom: 100px solid #000000;
 } /*just giving some page before and after each section*/
 
-
 .image {
   position: absolute;
   display: inline-block;
 }
-
-
 
 .hero__caption {
   z-index: 1;
@@ -137,47 +129,51 @@ section {
   font-weight: 300;
 }
 
-
-
 /* Hero Section */
 
 /* Statistics Section */
-#statistics {
-  background-color: var(--accent-1);
+
+.statsParent {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
+.statsParent > div {
+  /* This is the key change */
+  flex-basis: 300px;
+  max-width: 400px;
+  flex-grow: 1;
+
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border: 2px solid var(--bg-emphasis-color);
+  border-radius: 10rem;
   color: var(--text-color);
-  padding-top: 5em; 
-
-  h1 {
-    text-align: center;
-  }
-  
-.stats__grid {
-  /* Default style for desktops (primary layout) */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 5em 0;
-  gap: clamp(10px, 1rem, 20px);
-}
-
-.stats__card {
-  border: 1px solid var(--text-color);
   cursor: pointer;
-  border-radius: 10em;
-  text-align: center;
-  padding: 50px 10px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.stats__card:hover {
+.statsParent > div:hover {
   background-color: var(--bg-emphasis-color);
   color: var(--text-emphasis-color);
-}
-}
-/* Media query for tablets and phones (max-width: 768px) */
-@media (max-width: 768px) {
-  .stats__grid {
-    /* Styles to change the layout for smaller screens */
-    grid-template-columns: 1fr;
-  }
+  transform: scale(1.05); /* Optional: A subtle scaling effect */
 }
 
-  /* Statistics Section */
+@media (max-width: 600px) {
+  .statsParent > div {
+    flex-basis: 100%;
+    max-width: 100%;
+    border: none;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1); */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+/* Statistics Section */

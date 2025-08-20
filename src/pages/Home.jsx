@@ -1,4 +1,3 @@
-import React from 'react'
 import { LinkEmphasized, SearchButton } from '@/components/UIComponents'
 import { heroImages } from '@/data/content'
 import '@/index.css'
@@ -7,7 +6,8 @@ import { statisticReport } from '../data/content'
 const Home = ({ handleSearch }) => {
   return (
     <>
-      <section id="hero">
+    {/* Hero Section */}
+      <section id="hero" style={{overflow: 'hidden'}}>
         <div id="heroImage">
           {heroImages.map((image) => (
             <div style={{ zIndex: image.layer, inset: image.inset }} className="image" key={image.id} >
@@ -30,9 +30,10 @@ const Home = ({ handleSearch }) => {
           </div>
         </div>
       </section>
+      {/* Stats section */}
       <section id="statistics">
         <h1>Join Now</h1>
-        <div className="stats__grid">
+        <div className="statsParent">
           {statisticReport.map((stats) => (
             <div className="stats__card" key={stats.id}>
               <h1>{stats.stats}</h1>

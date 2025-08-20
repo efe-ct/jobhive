@@ -64,7 +64,7 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: min(1vw, 15px);
 }
 /* .logo img {
     width: 2.5rem;

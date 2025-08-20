@@ -4,7 +4,7 @@ header {
 
 nav {
   display: flex;
-  padding: 10px 30px;
+  padding: min(10px, 2vw) min(30px, 5vw);
   justify-content: space-between;
 }
 
@@ -14,6 +14,7 @@ nav {
   align-items: center;
   gap: 30px;
 }
+
 
 /* .navbar input {
   width: 360px;
@@ -26,10 +27,11 @@ nav {
   right: 0;
   height: 100vh;
   z-index: 999;
-  width: min(100vw, 500px)!important;
+  width: min(100%, 500px)!important;
+  /* width: min(100%, 500px)!important; */
   flex-direction: column;
   display: none;
-  background-color: transparent;
+  background-color: rgba(225, 225, 225, 0.1);
   backdrop-filter: blur(10px);
 }
 
