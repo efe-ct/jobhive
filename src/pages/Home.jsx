@@ -1,9 +1,31 @@
+import { useRef, useEffect } from 'react'
 import { LinkEmphasized, SearchButton } from '@/components/UIComponents'
 import { heroImages } from '@/data/content'
 import '@/index.css'
 import { statisticReport } from '../data/content'
 
 const Home = ({ handleSearch }) => {
+  const VIEWBREAKPOINT = 800;
+  const mobileCaption = useRef(null);
+  const desktopCaption = useRef(null);
+
+  
+useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth <= VIEWBREAKPOINT) {
+      mobileCaption.current.style.display = 'inline-block';
+      // mobileCaption.current.style.marginTop = '100px'
+      desktopCaption.current.style.display = 'none';
+    } else {
+      mobileCaption.current.style.display = 'none';
+      desktopCaption.current.style.display = 'inline-block';
+    }
+  };
+  handleResize()
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
+
   return (
     <>
     {/* Hero Section */}
@@ -19,10 +41,11 @@ const Home = ({ handleSearch }) => {
           ))}
         </div>
         <div className="hero__caption">
-          <span className="caption">Connecting talent
+          <span ref={desktopCaption} className="caption">Connecting talent
             <br />with opportunity.
           </span>
-          <p>Explore a curated list of jobs from top employers, all in one place.</p>
+          <span ref={mobileCaption} className="caption">Welcome to JobHive.</span>
+          <p>Employers and Employees, all in one place.</p>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <SearchButton onSearch={handleSearch} />
             {/* btn-cta not used */}
@@ -37,7 +60,7 @@ const Home = ({ handleSearch }) => {
           {statisticReport.map((stats) => (
             <div className="stats__card" key={stats.id}>
               <h1>{stats.stats}</h1>
-              <span>{stats.content}</span>
+              <p>{stats.content}</p>
             </div>
           ))}
         </div>
