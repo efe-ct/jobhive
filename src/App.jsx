@@ -28,7 +28,8 @@ const App = () => {
      {/* Header */}
       <Navbar onNavigate={handleNavigate} />
       <div id="body">
-        {currentPage === 'home' && <Home handleSearch={handleSearch} /> }
+        {currentPage === 'home' && <h1>This is the home</h1> }
+        {/* {currentPage === 'home' && <Home handleSearch={handleSearch} /> } */}
         {currentPage === 'about' && <h2>About Us</h2> }
         {currentPage === 'services' && <h2>Services</h2> }
         {currentPage === 'contact' && <h2>Contact Us</h2> }

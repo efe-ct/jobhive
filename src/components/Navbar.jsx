@@ -8,21 +8,12 @@ import { useRef } from 'react'
 
 const Navbar = ({ onNavigate }) => {
 
-
-    // const sidebar = document.querySelector('.sidebar')
-    // function showSidebar() {
-    //     sidebar.style.display = 'flex'
-    // }
-    // function closeSidebar() {
-    //     sidebar.style.display = 'none'
-    // }
-    
     const sidebar = useRef(null);
     function showSidebar() {
-        sidebar.current.style.display = 'flex'
+        sidebar.current.style.display = 'flex';
     }
     function closeSidebar() {
-        sidebar.current.style.display = 'none'
+        sidebar.current.style.display = 'none';
     }
     
     
@@ -40,12 +31,12 @@ const Navbar = ({ onNavigate }) => {
                 <svg onClick={showSidebar} className="pointer menu__button" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
             </div>
             <div ref={sidebar} className="navLinks sidebar">
-                <svg style={{position: 'absolute' , top: '0', right: '0', margin: '10px'}} onClick={closeSidebar} className="pointer" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                <svg style={{position: 'absolute' , top: '18px', right: '30px'}} onClick={closeSidebar} className="pointer" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
                 {navBarContent.map((link) => (
-                    <Link onNavigate={onNavigate} href={link.path} key={link.id} title={link.title} />
+                    <Link onNavigate={(args) =>{onNavigate?.(args); closeSidebar();}} href={link.path} key={link.id} title={link.title} />
                 ))}
-                <LinkEmphasized color="black" href="" title="Apply Now" />
-                <LinkEmphasized color="white" href="" title="Contact Us" />
+                <LinkEmphasized onClick={closeSidebar} color="black" href="" title="Apply Now" />
+                <LinkEmphasized onClick={closeSidebar} color="white" href="" title="Contact Us" />
             </div>
             {/* </nav> */}
         </nav >

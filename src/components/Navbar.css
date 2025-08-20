@@ -6,7 +6,6 @@ nav {
   display: flex;
   padding: 10px 30px;
   justify-content: space-between;
-
 }
 
 .navLinks {
@@ -27,12 +26,13 @@ nav {
   right: 0;
   height: 100vh;
   z-index: 999;
-  width: min(100%, 450px);
+  width: min(100vw, 500px)!important;
   flex-direction: column;
   display: none;
   background-color: transparent;
   backdrop-filter: blur(10px);
 }
+
 
 .menu__button {
   display: none;
@@ -42,6 +42,9 @@ nav {
 }
 
 @media (max-width: 1000px) {
+  /* .sidebar{
+    width: 100vw;
+  } */
   .isMobile {
     display: none!important; 
     /* change this to a react hook isMobile later */
