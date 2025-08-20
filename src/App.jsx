@@ -27,7 +27,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
           {/* navigate to forces the first page to be home */}
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<Home handleSearch={handleSearch} />} />
           <Route path="/about" element={<About />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/contact" element={<Contact />} />
