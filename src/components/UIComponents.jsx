@@ -10,7 +10,7 @@ export const Logo = () => {
     )
 }
 
-export const Link = ({ href, title, onNavigate }) => {
+export const Link = ({ href, title, onNavigate, isMobile }) => {
     const handleClick = (e) => {
         e.preventDefault();
 
@@ -22,12 +22,12 @@ export const Link = ({ href, title, onNavigate }) => {
 
     return (
         // <span style={{cursor: 'pointer'}} onClick={handleClick} className="styledLink" href={href}>{title}</span>
-        <a onClick={handleClick} className="styledLink" href={href}>{title}</a>
+        <a onClick={handleClick} className={`styledLink ${isMobile ? 'isMobile' : ''}`} href={href}>{title}</a>
     )
 }
 
-export const LinkEmphasized = ({ href, title, color, style }) => {
-    const LinkEmphasizedOptions = `styledLinkEmphasized ${color === 'black' ? 'black' : color === 'white' ? 'white' : ''}`;
+export const LinkEmphasized = ({ href, title, color, style, isMobile }) => {
+    const LinkEmphasizedOptions = `styledLinkEmphasized ${isMobile ? 'isMobile' : ''} ${color === 'black' ? 'black' : color === 'white' ? 'white' : ''}`;
     return (
         <a style={style} className={LinkEmphasizedOptions} href={href}>
             <span className="LinkEmpasizedAnimation">

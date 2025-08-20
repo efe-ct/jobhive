@@ -21,6 +21,8 @@ const App = () => {
     console.log(`Navigating to " + ${pageName}`);
   }
 
+  // const [isMobile, setIsMobile] = useState();
+
   return (
     <>
      {/* Header */}

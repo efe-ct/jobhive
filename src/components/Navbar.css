@@ -33,3 +33,21 @@ nav {
   background-color: transparent;
   backdrop-filter: blur(10px);
 }
+
+.menu__button {
+  display: none;
+}
+
+@media (max-width: 800px) {
+}
+
+@media (max-width: 1000px) {
+  .isMobile {
+    display: none!important; 
+    /* change this to a react hook isMobile later */
+  }
+  .menu__button {
+    display: block;
+    /* same react hook */
+  }
+}
