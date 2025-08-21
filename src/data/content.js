@@ -57,21 +57,25 @@ export const statisticReport = [
     {
         id: 0,
         content: "Companies",
-        stats: 4,
+        stats: "4",
+        suffix: "+",
     },
     {
         id: 1,
         content: "Active Jobs",
-        stats: 6,
+        stats: "6",
+        suffix: "+",
     },
     {
         id: 2,
-        content: "Completed Hires",
-        stats: 12,
+        content: "Successful & Completed Hires",
+        stats: "12",
+        suffix: "%",
     },
     {
         id: 3,
         content: "Job Listings",
-        stats: 24,
+        stats: "24",
+        suffix: "+",
     },
 ]

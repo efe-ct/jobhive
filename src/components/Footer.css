@@ -1,0 +1,122 @@
+/* Footer base */
+.customFooter {
+    --footer-bg: #000;
+    --footer-text: #fff;
+    --footer-muted: rgba(255,255,255,0.65);
+    --footer-border: rgba(255,255,255,0.16);
+    --pill-bg: rgba(255,255,255,0.24);
+    --pill-hover: rgba(255,255,255,0.32);
+    --link-hover: #fff;
+
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    width: 100%;
+}
+
+.customFooter .footerInner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.25rem 2rem;
+    border-top: 1px solid var(--footer-border);
+}
+
+/* this section only shows the image containing the icon jobhive */
+.customFooter .footerHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.customFooter .footerSocials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* the grid that contains all the nav links*/
+.customFooter .footerGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 1.5rem;
+    padding: 1rem 0 2rem;
+}
+
+@media (min-width: 720px) {
+    .customFooter .footerGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2.5rem;
+    }
+}
+
+.customFooter .footerColumn {
+    min-width: 0;
+}
+
+.customFooter .footerHeading {
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--footer-muted);
+    margin: 0 0 0.75rem;
+}
+
+.customFooter .footerLinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+/* UIComponents Links i changed the a tags when they are in footer*/
+.customFooter .footerLinks a,
+.customFooter .externalLinks a {
+    color: var(--footer-muted);
+    text-decoration: none;
+}
+
+.customFooter .footerLinks a:hover,
+.customFooter .externalLinks a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* simple copyright and links: to github repo */
+.customFooter .footerBottom {
+    border-top: 1px solid var(--footer-border);
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.customFooter .copyright {
+    margin: 0;
+    color: var(--footer-muted);
+    font-size: 0.9rem;
+}
+
+.customFooter .externalLinks {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* Make sure footer never causes horizontal overflow */
+.customFooter,
+.customFooter * {
+    box-sizing: border-box;
+    min-width: 0;
+}

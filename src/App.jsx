@@ -6,6 +6,7 @@ import Home from '@/pages/Home'
 import About from '@/pages/About'
 import Jobs from '@/pages/Jobs'
 import Contact from '@/pages/Contact'
+import Footer from "@/components/Footer.jsx";
 
 const App = () => {
 
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   )
 }

@@ -4,13 +4,19 @@
     text-decoration: none;
 }
 
+/* .styledLink:hover {
+
+} used active */
+.active, .styledLink:hover {
+    font-weight: bold;
+    color: var(--accent-2)!important;
+    border-bottom: 2px solid var(--accent-2);
+}
+
 .styledLink {
     color: var(--text-color);
 }
 
-/* .styledLink:hover {
-    
-} do later */
 
 .styledLinkEmphasized {
     display: inline-flex;

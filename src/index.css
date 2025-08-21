@@ -51,7 +51,7 @@
 
   /* used */
   --margin: 5rem;
-  /* --margin: min(1vw, 30px); */
+  /* --margin: min(1vw, 30px);*/
   --nav-gap: 1.5rem;
 }
 
@@ -67,7 +67,9 @@
 body {
   font-family: "Inter";
 }
-
+#body {
+  min-height: 100vh;
+}
 /* Background Colors */
 #hero {
   background-color: var(--bg-color);

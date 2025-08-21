@@ -2,7 +2,8 @@ import { useRef, useEffect } from 'react'
 import { LinkEmphasized, SearchButton } from '@/components/UIComponents'
 import { heroImages } from '@/data/content'
 import '@/index.css'
-import { statisticReport } from '../data/content'
+import { statisticReport } from '@/data/content'
+import CountUp from "react-countup";
 
 const Home = ({ handleSearch }) => {
   const VIEWBREAKPOINT = 800;
@@ -59,7 +60,9 @@ useEffect(() => {
         <div className="statsParent">
           {statisticReport.map((stats) => (
             <div className="stats__card" key={stats.id}>
-              <h1>{stats.stats}</h1>
+              {/*<h1>{stats.stats}</h1>*/}
+              {/*<p>{stats.content}</p>*/}
+              <h1><CountUp suffix={stats.suffix} end={stats.stats} /></h1>
               <p>{stats.content}</p>
             </div>
           ))}
