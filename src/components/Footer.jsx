@@ -1,48 +1,8 @@
 import './Footer.css'
+import { footerLinks } from '../data/content';
 import { Logo, Links } from "@/components/UIComponents.jsx";
 
-const Footer = () => {
-    // Data-driven sections for easy edits and i18n later
-    const sections = [
-        {
-            heading: 'Product',
-            items: [
-                { title: 'Home', path: '/home' },
-                { title: 'Jobs', path: '/jobs' },
-                { title: 'About', path: '/about' },
-                { title: 'Contact', path: '/contact' },
-            ],
-        },
-        {
-            heading: 'Product',
-            items: [
-                { title: 'Home', path: '/home' },
-                { title: 'Jobs', path: '/jobs' },
-                { title: 'About', path: '/about' },
-                { title: 'Contact', path: '/contact' },
-            ],
-        },
-        {
-            heading: 'Product',
-            items: [
-                { title: 'Home', path: '/home' },
-                { title: 'Jobs', path: '/jobs' },
-                { title: 'About', path: '/about' },
-                { title: 'Contact', path: '/contact' },
-            ],
-        },
-        {
-            heading: 'Product',
-            items: [
-                { title: 'Home', path: '/home' },
-                { title: 'Jobs', path: '/jobs' },
-                { title: 'About', path: '/about' },
-                { title: 'Contact', path: '/contact' },
-            ],
-        },
-    ];
-
-    
+const Footer = () => {    
     return (
         <footer className="customFooter" role="contentinfo">
             <div className="footerInner">
@@ -52,7 +12,7 @@ const Footer = () => {
 
                 {/* dynamic links */}
                 <div className="footerGrid" role="navigation" aria-label="Footer">
-                    {sections.map((section) => (
+                    {footerLinks.map((section) => (
                         <div className="footerColumn" key={section.heading}>
                             <h4 className="footerHeading">{section.heading}</h4>
                             <ul className="footerLinks">

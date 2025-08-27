@@ -8,9 +8,12 @@
 
 } used active */
 .active, .styledLink:hover {
+    --variable: rgb(141, 139, 139);
     font-weight: bold;
-    color: var(--accent-2)!important;
-    border-bottom: 2px solid var(--accent-2);
+    /* color: var(--accent-2)!important; */
+    /* border-bottom: 2px solid var(--accent-2); */
+    color: var(--variable)!important;
+    border-bottom: 2px solid var(--variable);
 }
 
 .styledLink {

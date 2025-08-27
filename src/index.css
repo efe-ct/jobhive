@@ -123,7 +123,7 @@ section {
   line-height: 5rem;
 }
 
-.hero__caption p {
+.hero__caption p, #about_section p { /*affects about section p*/
   margin: 1.5rem 0;
   font-size: 1.5rem;
   line-height: 2.25rem;
@@ -212,3 +212,9 @@ section {
   }
 }
 /* Statistics Section - end */
+
+
+/* about section */
+.about-list {
+ list-style-type: disc; 
+}

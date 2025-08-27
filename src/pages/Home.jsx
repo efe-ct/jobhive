@@ -50,7 +50,7 @@ useEffect(() => {
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <SearchButton onSearch={handleSearch} />
             {/* btn-cta not used */}
-            <LinkEmphasized className="btn-cta" style={{ fontSize: '1.5rem' }} href="" color="black" title="Explore Jobs" />
+            <LinkEmphasized className="btn-cta" style={{ fontSize: '1.5rem' }} color="black" title="Explore Jobs" />
           </div>
         </div>
       </section>

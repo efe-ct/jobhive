@@ -1,10 +1,10 @@
-import React from 'react'
+import JobCard from "@/components/JobCard";
 
 const Jobs = () => {
     return (
-        <>
-            <div>Jobs</div>
-        </>
+        <section>
+            <JobCard />
+        </section>
     )
 }
 
