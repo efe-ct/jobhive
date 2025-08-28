@@ -47,12 +47,4 @@ export const jobCatalog = [
         salary: 80000,
         experience: "2+ years"
     },
-    {
-    id: 7,
-    jobTitle: "Frontend Developer",
-    companyName: "Tech Solutions",
-    location: "New York, NY",
-    salary: 85000,
-    experience: "2+ years"
-    },
 ]
