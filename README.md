@@ -1,8 +1,9 @@
 # 🐝 JobHive – Job Listings SPA
-## ![JobHive Logo](public/logo.svg)
-![banner](https://www.figma.com/design/KB0MoLdWKvck6vovLf7NVQ/JobHive---final?node-id=3-183&t=89Rv1LTf2BwZ5qNO-4)
+## ![JobHive Logo](/public/logo.png)
+![banner](/public/figma.png)
 
 ## 📌 Overview
+### by Chritiana, Owode and Osinachukwu Nnanna
 
 **JobHive** is a responsive Single Page Application (SPA) designed to help users browse, filter, and explore job opportunities with ease. It includes:
 
