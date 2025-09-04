@@ -1,0 +1,297 @@
+/* Mobile-first tweaks; iterate as needed */
+@media (max-width: 900px) {
+
+    .top {
+        padding: var(--space-2) var(--space-3);
+        gap: var(--space-4);
+        text-align: left;
+        font-size: 15px;
+        /* slightly smaller body text */
+        color: var(--color-text);
+        font-family: var(--font-sans);
+        overflow-x: hidden;
+    }
+
+    .container {
+        display: none;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .hero {
+        gap: 48px;
+        font-size: 48px;
+        margin-top: var(--space-10);
+    }
+
+    .searchbar {
+        padding: 8px;
+    }
+
+    .searchbar-row {
+        grid-template-columns: 1fr;
+        width: 100vw;
+    }
+
+    .container-wrapper, .container {
+        width: 100%;
+    }
+
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-title {
+        font-size: 34px;
+    }
+
+    .stats-grid {
+        max-width: 100%;
+    }
+
+    /* =========================
+       ADJUST HERO → STATS SPACING @900PX
+       Base was 120px (in index.css .stats-section)
+       Reduced by ~100px here. Tweak this value if needed.
+       ========================= */
+    .stats-section {
+        margin-top: -300px;
+        /* CHANGEME: was 48px; ~100px less than base */
+    }
+
+    /* body-sized text reductions for readability at 900px */
+    .about-card p, .about-card li {
+        font-size: 20px;
+    }
+
+    .cta-line {
+        font-size: 30px;
+    }
+
+    .stat-label {
+        font-size: 20px;
+    }
+
+    .job-card__text {
+        font-size: 11px;
+    }
+
+    .job-meta-item {
+        font-size: 11px;
+    }
+
+    .modal-card {
+        width: min(100% - 24px, 720px);
+        padding: 16px;
+    }
+
+    /* Contact + CTA heading reductions (~0.8x) */
+    .contact-title {
+        font-size: 35px;
+        /* was 44px */
+    }
+
+    .cta-line {
+        font-size: 22px;
+        /* was 28px */
+    }
+}
+
+/* Tablet and down: stack footer columns and prevent overflow */
+@media (max-width: 1024px) {
+    .footer-grid-item-parent {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .logo-parent {
+        padding: 0 16px;
+    }
+
+    .footer-footer-grid-item {
+        width: 100%;
+    }
+
+    .footer-link-wrapper {
+        width: 100%;
+    }
+
+    .footer-link {
+        width: 100%;
+    }
+}
+
+/* Under 800px: switch to mobile search, hide desktop search */
+@media (max-width: 800px) {
+    .search-desktop-only {
+        display: none;
+    }
+
+    .search-mobile-only {
+        display: block;
+        width: 100%;
+    }
+
+    .mobile-go-jobs {
+        margin-top: 8px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* shrink search sizes */
+    .searchbar {
+        padding: 4px;
+    }
+
+    .searchbar-input input {
+        font-size: 18px;
+    }
+
+    .selected-default, .default-default, .hover-default, .default-dialog, .hover-dialog, .grey-default, .grey-hover-default {
+        font-size: 14px;
+        padding: 5px 8px;
+        /* reduced padding for mobile */
+    }
+
+    /* reduce big headings */
+    .hero {
+        font-size: 42px;
+    }
+
+    .jobs-title, .about-title {
+        font-size: 42px;
+    }
+
+    /* Make Contact a bit smaller than other pages (~0.8x of 42) */
+    .contact-title {
+        font-size: 34px;
+    }
+}
+
+/* Default visibility for larger screens */
+.search-desktop-only {
+    display: block;
+}
+
+.search-mobile-only {
+    display: none;
+}
+
+/* Mobile search box styles */
+.mobile-searchbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.mobile-searchbox__input {
+    width: 100%;
+    background: transparent;
+    border: 2px solid var(--color-text);
+    box-shadow: 0 0 0 2px var(--color-border) inset;
+    color: var(--color-text);
+    border-radius: 999px;
+    padding: 10px 14px;
+    font-family: var(--font-mono);
+    font-size: 18px;
+}
+
+.mobile-searchbox__filters {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobile-go-jobs .variant-component {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .selected-default, .default-default, .hover-default, .default-dialog, .hover-dialog, .grey-default, .grey-hover-default {
+        font-size: 14px;
+        padding: 4px 8px;
+        /* further reduce on small phones */
+    }
+
+    .searchbar-input input {
+        font-size: 18px;
+    }
+
+    .job-card__title {
+        font-size: 18px;
+    }
+
+    .job-meta-item {
+        font-size: 11px;
+    }
+
+    .job-chip {
+        font-size: 9px;
+    }
+
+    /* tighter headings on phones */
+    .hero {
+        font-size: 34px;
+    }
+
+    .jobs-title, .about-title {
+        font-size: 32px;
+    }
+
+    .contact-title {
+        font-size: 26px;
+        /* ~0.8x of 32 */
+    }
+
+    .stats-title {
+        font-size: 28px;
+    }
+
+    /* make search input full-bleed and stack filters under */
+    .searchbar {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        border-left-width: 0;
+        border-right-width: 0;
+        border-radius: 0;
+    }
+
+    .searchbar-row {
+        grid-template-columns: 1fr;
+    }
+
+    .filters-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown > .variant-component {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .dropdown-menu {
+        min-width: 100%;
+    }
+
+    /* Slightly smaller CTA lines on phones */
+    .cta-line {
+        font-size: 18px;
+        /* ~0.8x of 22 */
+    }
+}
