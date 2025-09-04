@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Button, useToast } from './ui';
 import { jobCatalog } from '../datastore';
 
@@ -151,93 +152,95 @@ const JobCard = ({ company, title, category, location, salary, level, tags = [],
         </Button>
       </div>
 
-      {open && (
-        <div
-          className="modal-overlay"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setOpen(false);
-          }}
-        >
-          <div ref={cardRef} className={`modal-card${animateOpen ? ' is-open' : ''}`} role="dialog" aria-modal="true">
-            <div className="modal-header">
-              <div className="modal-title">{title}</div>
-              <button className="modal-close" onClick={() => setOpen(false)}>
-                Close
-              </button>
-            </div>
-            <div className="modal-body">
-              <div className="job-detail">
-                <div className="job-detail-row">
-                  <div>Company</div>
-                  <div>{company || full.company}</div>
-                </div>
-                <div className="job-detail-row">
-                  <div>Category</div>
-                  <div>{category || full.category}</div>
-                </div>
-                <div className="job-detail-row">
-                  <div>Location</div>
-                  <div>{location || full.location}</div>
-                </div>
-                <div className="job-detail-row">
-                  <div>Salary</div>
-                  <div>₦{salary || full.salary}</div>
-                </div>
-                <div className="job-detail-row">
-                  <div>Level</div>
-                  <div>{level || full.level || full.experience}</div>
-                </div>
-                <div className="job-detail-row">
-                  <div>Perks</div>
-                  <div>{perks || full.perks || safePerks}</div>
-                </div>
-                <div className="job-detail-row">
-                  <div>Qualifications</div>
-                  <div>{qualifications || full.qualifications || safeQualifications}</div>
-                </div>
-                <div className="job-detail-row">
-                  <div>Description</div>
-                  <div>{description || full.description}</div>
-                </div>
+      {open &&
+        createPortal(
+          <div
+            className="modal-overlay"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setOpen(false);
+            }}
+          >
+            <div ref={cardRef} className={`modal-card${animateOpen ? ' is-open' : ''}`} role="dialog" aria-modal="true">
+              <div className="modal-header">
+                <div className="modal-title">{title}</div>
+                <button className="modal-close" onClick={() => setOpen(false)}>
+                  Close
+                </button>
               </div>
-
-              {!confirm ? (
-                <div className="apply">
-                  <div style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: '22px' }}>Apply Now</div>
-                  <form
-                    className="apply-form"
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      setConfirm(true);
-                      try {
-                        showToast('Application has been submitted, good luck.', 2600);
-                      } catch {}
-                      try {
-                        window.alert('Job application has been submitted.');
-                      } catch {}
-                    }}
-                  >
-                    <input className="apply-input" type="text" name="name" placeholder="Full Name" required />
-                    <input className="apply-input" type="email" name="email" placeholder="Email" required />
-                    <input className="apply-file" type="file" name="resume" accept=".pdf,.doc,.docx" />
-                    <textarea className="apply-textarea" name="cover" placeholder="Cover Letter (optional)"></textarea>
-                    <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
-                      <Button type="default" state="grey" onClick={() => setOpen(false)}>
-                        Cancel
-                      </Button>
-                      <Button type="default" state="selected">
-                        Submit
-                      </Button>
-                    </div>
-                  </form>
+              <div className="modal-body">
+                <div className="job-detail">
+                  <div className="job-detail-row">
+                    <div>Company</div>
+                    <div>{company || full.company}</div>
+                  </div>
+                  <div className="job-detail-row">
+                    <div>Category</div>
+                    <div>{category || full.category}</div>
+                  </div>
+                  <div className="job-detail-row">
+                    <div>Location</div>
+                    <div>{location || full.location}</div>
+                  </div>
+                  <div className="job-detail-row">
+                    <div>Salary</div>
+                    <div>₦{salary || full.salary}</div>
+                  </div>
+                  <div className="job-detail-row">
+                    <div>Level</div>
+                    <div>{level || full.level || full.experience}</div>
+                  </div>
+                  <div className="job-detail-row">
+                    <div>Perks</div>
+                    <div>{perks || full.perks || safePerks}</div>
+                  </div>
+                  <div className="job-detail-row">
+                    <div>Qualifications</div>
+                    <div>{qualifications || full.qualifications || safeQualifications}</div>
+                  </div>
+                  <div className="job-detail-row">
+                    <div>Description</div>
+                    <div>{description || full.description}</div>
+                  </div>
                 </div>
-              ) : (
-                <div className="confirm-box">Thank you! Your application was submitted (demo). We’ll be in touch.</div>
-              )}
+
+                {!confirm ? (
+                  <div className="apply">
+                    <div style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: '22px' }}>Apply Now</div>
+                    <form
+                      className="apply-form"
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        setConfirm(true);
+                        try {
+                          showToast('Your job Application has been successfully submitted', 2600);
+                        } catch {}
+                        try {
+                          window.alert('Your job Application has been successfully submitted');
+                        } catch {}
+                      }}
+                    >
+                      <input className="apply-input" type="text" name="name" placeholder="Full Name" required />
+                      <input className="apply-input" type="email" name="email" placeholder="Email" required />
+                      <input className="apply-file" type="file" name="resume" accept=".pdf,.doc,.docx" />
+                      <textarea className="apply-textarea" name="cover" placeholder="Cover Letter (optional)"></textarea>
+                      <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
+                        <Button type="default" state="grey" onClick={() => setOpen(false)}>
+                          Cancel
+                        </Button>
+                        <Button type="default" state="selected">
+                          Submit
+                        </Button>
+                      </div>
+                    </form>
+                  </div>
+                ) : (
+                  <div className="confirm-box">Thank you! Your application was submitted (demo). We’ll be in touch.</div>
+                )}
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </article>
   );
 };

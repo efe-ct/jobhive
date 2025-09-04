@@ -285,12 +285,12 @@ a {
   background-color: var(--color-muted);
   border: 0.9px solid var(--color-border);
   overflow-y: auto;
-  z-index: 1;
+  z-index: 100;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 9.1px;
+  padding: 9px;
 }
 
 .searchbtn-filter {
@@ -701,7 +701,8 @@ a {
 
 .jobs-grid {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  /* above .jobs-search (z-index:1) so modal overlay sits on top */
   margin: 0 auto;
   width: calc(100% - 40px);
   max-width: 1200px;
@@ -918,6 +919,8 @@ a {
   box-shadow: 0 0 0 2px var(--color-border) inset;
   background: var(--color-bg);
   padding: 10px 12px;
+  /* allow dropdown menus to escape the rounded container */
+  overflow: visible;
 }
 
 .searchbar-row {
@@ -925,6 +928,8 @@ a {
   grid-template-columns: 1fr 480px;
   align-items: center;
   gap: 12px;
+  overflow: visible;
+  /* avoid clipping dropdowns */
 }
 
 @media (max-width: 1024px) {
@@ -962,6 +967,8 @@ a {
   flex-direction: column;
   gap: 10px;
   padding: 4px 6px 6px 6px;
+  overflow: visible;
+  /* avoid clipping dropdowns */
 }
 
 .filters-row {
@@ -969,6 +976,8 @@ a {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  overflow: visible;
+  /* avoid clipping dropdowns */
 }
 
 .filters-row + .filters-row {
@@ -984,22 +993,21 @@ a {
 /* Dropdown inside SearchBar */
 .dropdown {
   position: relative;
-  z-index: 100;
-  /* sit above sibling pills */
+  z-index: 300;
 }
 
 .dropdown-menu {
+
   position: absolute;
   top: calc(100% + 6px);
-  /* sit right under the trigger regardless of font/OS */
+  /* sit right under the trigger */
   left: 0;
   min-width: max(220px, 100%);
-  background: #0f0f0f;
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 6px;
-  z-index: 1000;
-  /* ensure above searchbar and neighbors */
+  z-index: 5000;
   max-height: 250px;
   overflow-y: auto;
   pointer-events: auto;
@@ -1032,7 +1040,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
+  z-index: 6000;
 }
 
 .modal-card {
@@ -1058,6 +1066,11 @@ a {
 .modal-overlay {
   /* soft fade-in */
   animation: modalFadeIn 160ms ease;
+}
+
+/* Lock background scroll when modal is open */
+.no-scroll {
+  overflow: hidden !important;
 }
 
 @keyframes modalFadeIn {
